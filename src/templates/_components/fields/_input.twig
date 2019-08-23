@@ -1,0 +1,58 @@
+{#
+/**
+ * EasyMDE Field plugin for Craft CMS 3.x
+ *
+ * @link      https://www.mitchartemis.dev
+ * @copyright Copyright (c) 2019 Mitch Stanley
+ */
+#}
+ {% import "_includes/forms" as _forms %}
+
+ {% set config = {
+    id: name,
+    name: name,
+    value: value,
+    class: 'craft-easymde',
+    maxlength: field.charLimit,
+    showCharsLeft: true,
+    placeholder: field.placeholder|t('site'),
+    rows: field.initialRows,
+    disabled: false
+} %}
+{{ _forms.textarea(config) }}
+
+<link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+<script>
+var url = "https://unpkg.com/easymde/dist/easymde.min.js";
+var scripts = document.getElementsByTagName('script');
+function isEasyMDELoaded(url) {
+	if (!url) url = "https://unpkg.com/easymde/dist/easymde.min.js";
+	var scripts = document.getElementsByTagName('script');
+	for (var i = scripts.length; i--;) {
+		if (scripts[i].src == url) return true;
+	}
+	return false;
+}
+
+if (!isEasyMDELoaded(url)) {
+	loadScript('https://unpkg.com/easymde/dist/easymde.min.js');
+
+	if (!isEasyMDELoaded(url)) {
+		console.log("Could not load Easy MDE", url);
+	}
+}
+
+
+function loadScript(scriptLocationAndName) {
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = scriptLocationAndName;
+    head.appendChild(script);
+		script.addEventListener('load', function() {
+			Array.prototype.forEach.call(document.getElementsByClassName('craft-easymde'),function(element) {
+				new EasyMDE({element: element});
+			});
+		});
+}
+</script>
