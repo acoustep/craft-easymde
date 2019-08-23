@@ -13,7 +13,7 @@ Add the package to your composer.json file
 Install the plugin
 
 ```
-./craft install/plugin acoustep/craft-easymde
+./craft install/plugin easymde-markdown-editor
 ```
 
 ## Usage
