@@ -22,6 +22,9 @@
 {{ _forms.textarea(config) }}
 
 <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+<style>
+.editor-toolbar.fullscreen, .CodeMirror-fullscreen { z-index: 999; }
+</style>
 <script>
 var url = "https://unpkg.com/easymde/dist/easymde.min.js";
 var scripts = document.getElementsByTagName('script');
