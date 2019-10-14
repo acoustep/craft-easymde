@@ -54,7 +54,10 @@ function loadScript(scriptLocationAndName) {
     head.appendChild(script);
 		script.addEventListener('load', function() {
 			Array.prototype.forEach.call(document.getElementsByClassName('craft-easymde'),function(element) {
-				new EasyMDE({element: element});
+				var easyMDE = new EasyMDE({element: element});
+				easyMDE.codemirror.on("change", function(){
+					$(element).val(easyMDE.value());
+				});
 			});
 		});
 }
