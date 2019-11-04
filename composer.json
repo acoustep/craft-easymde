@@ -26,7 +26,7 @@
     }
   },
   "extra": {
-    "handle": "craft-easymde",
+    "handle": "easymde-markdown-editor",
     "name": "Craft CMS Easy MDE Markdown Editor",
     "documentationUrl": "https://github.com/acoustep/craft-easymde/blob/master/README.md"
   }
