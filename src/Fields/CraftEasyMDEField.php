@@ -71,7 +71,7 @@ class CraftEasyMDEField extends PlainText implements PreviewableFieldInterface
         $namespacedId = Craft::$app->getView()->namespaceInputId($id);
         // Render the input template
         return Craft::$app->getView()->renderTemplate(
-            'craft-easymde/_components/fields/_input',
+            'easymde-markdown-editor/_components/fields/_input',
             [
                 'name' => $this->handle,
                 'value' => $value,
