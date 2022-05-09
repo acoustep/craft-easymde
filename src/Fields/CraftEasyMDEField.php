@@ -48,13 +48,14 @@ class CraftEasyMDEField extends PlainText implements PreviewableFieldInterface
         ];
         parent::__construct($config);
     }
-    public function rules()
+    public function defineRules(): array
     {
-        $rules = array_merge(parent::rules(), [
+        /* $rules = array_merge(parent::rules(), [
             [['mode'], 'string'],
             [['mode'], 'default', 'value' => 'plain'],
         ]);
-        return $rules;
+	return $rules; */
+	return [];
     }
 
     /**
@@ -63,7 +64,7 @@ class CraftEasyMDEField extends PlainText implements PreviewableFieldInterface
      *
      * @return string
      */
-    public function getInputHtml($value, ElementInterface $element = null): string
+    public function getInputHtml(mixed $value, ?\craft\base\ElementInterface $element = null): string
     {
         $mode = $this->_getMode($element);
         // Get our id and namespace

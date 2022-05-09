@@ -1,7 +1,7 @@
 {
   "name": "acoustep/craft-easymde",
   "description": "Markdown field that uses EasyMDE Editor",
-  "version": "0.1.7",
+  "version": "4.0.0",
   "type": "craft-plugin",
   "keywords": ["markdown", "craftcms3", "easymde"],
   "license": "MIT",
@@ -18,7 +18,7 @@
     "docs": "https://github.com/acoustep/craft-easymde/blob/master/README.md"
   },
   "require": {
-    "craftcms/cms": "^3.2.0"
+    "craftcms/cms": "^4.0"
   },
   "autoload": {
     "psr-4": {
@@ -29,6 +29,16 @@
     "handle": "easymde-markdown-editor",
     "name": "Craft CMS Easy MDE Markdown Editor",
     "documentationUrl": "https://github.com/acoustep/craft-easymde/blob/master/README.md"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dev": {
+    "craftcms/rector": "dev-main"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
   }
 }
-
